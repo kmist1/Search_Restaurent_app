@@ -1,33 +1,34 @@
 import React from "react";
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import { createDrawerNavigator } from "react-navigation-drawer";
+// import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+// import { createDrawerNavigator } from "react-navigation-drawer";
 import AboutUs from './src/screens/AboutUs';
 import Contact from './src/screens/Contact';
 import Location from './src/screens/Location';
-import HomeScreen from './src/screens/HomeScreen'
+import HomeScreen from './src/screens/HomeScreen';
+import Login from './src/screens/Login';
+import DetailsScreen from "./src/screens/DetailScreen";
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import DetailScreen from './src/screens/DetailScreen';
+import Playground from './src/screens/Playground';
 
 
-const DrawerNavigation = createDrawerNavigator(
-  {
-    HomeScreen:HomeScreen,
-    AboutUs: AboutUs,
-    ContactUS:Contact,
-    Location:Location
-  },
-  {
-    initialRouteName: "HomeScreen",
-  }
-);
 
-const Router = createAppContainer(
-  createSwitchNavigator({
-    // This is where your Auth screens would be handled.
-    DrawerNavigation
-  })
-);
+const Drawer = createDrawerNavigator();
 
 export default function App() {
-  return <Router />;
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="HomeScreen">
+        <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+        <Drawer.Screen name="Contact" component={Contact} />
+        <Drawer.Screen name="Location" component={Location} />
+        <Drawer.Screen name="DetailScreen" component={DetailScreen} />
+        <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Playground" component={Playground}/>
+      </Drawer.Navigator>
+    </NavigationContainer>
+  )
 }
 
 // const Tab = createBottomTabNavigator();

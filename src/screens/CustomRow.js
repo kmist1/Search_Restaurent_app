@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const styles = StyleSheet.create({
     container: {
@@ -26,17 +27,21 @@ const styles = StyleSheet.create({
     },
 });
 
-const CustomRow = ({ userID, id, title, body }) => (
+const CustomRow = ({id,title,body,navigation}) => (
+    
     <View style={styles.container}>
             <Text>
                 id: {id}
             </Text>
-            <Text style = {{fontWeight: 'bold', fontSize: 20}}>
-                title: {title}
-            </Text>
-            <Text>
-                body: {body}
-            </Text>
+            <TouchableOpacity onPress = {()=> navigation.navigate("DetailScreen")}>
+                <Text style = {{fontWeight: 'bold', fontSize: 20}}>
+                    title: {title}
+                </Text>
+                <Text>
+                    body: {body}
+                </Text>
+            </TouchableOpacity>
+            
     </View>
 );
 
