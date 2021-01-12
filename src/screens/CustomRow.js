@@ -27,13 +27,12 @@ const styles = StyleSheet.create({
     },
 });
 
-const CustomRow = ({id,title,body,navigation}) => (
-    
+const CustomRow = ({id, title, body, navigation}) => (
     <View style={styles.container}>
             <Text>
                 id: {id}
             </Text>
-            <TouchableOpacity onPress = {()=> navigation.navigate("DetailScreen")}>
+            <TouchableOpacity onPress = {()=> navigation.navigate("DetailScreen", {title})}>
                 <Text style = {{fontWeight: 'bold', fontSize: 20}}>
                     title: {title}
                 </Text>

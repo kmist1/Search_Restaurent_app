@@ -11,6 +11,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import DetailScreen from './src/screens/DetailScreen';
 import Playground from './src/screens/Playground';
+import SearchBar from './src/screens/SearchBar';
+import OrderScreen from './src/screens/OrderScreen';
 
 
 
@@ -26,6 +28,8 @@ export default function App() {
         <Drawer.Screen name="DetailScreen" component={DetailScreen} />
         <Drawer.Screen name="Login" component={Login} />
         <Drawer.Screen name="Playground" component={Playground}/>
+        <Drawer.Screen name="Search" component={SearchBar}/>
+        <Drawer.Screen name="Order" component={OrderScreen}/>
       </Drawer.Navigator>
     </NavigationContainer>
   )

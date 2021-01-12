@@ -5,21 +5,17 @@ import { StyleSheet, Text, View, Button, SafeAreaView, Image} from 'react-native
 import ApiManager from './api/ApiManager';
 
 //Create custom components
-const DetailsScreen = () => {
-
-  
-
-  const [result , setResults]  = useState([]);
-
-  const getPost = async () => {
-      const response = await ApiManager.get('/posts');
-      setResults(response.data);
-  };
-
+const DetailsScreen = ({title,navigation}) => {
+console.log(title);
   return (
     <SafeAreaView style={styles.container}>
-       <Text style = {styles.welcomeText}>Details</Text>  
-      <StatusBar style="auto" />
+       <Text style = {styles.welcomeText}>Details</Text> 
+       <Text>title: {title}</Text> 
+      <StatusBar style="auto"/>
+      <Button
+        title = "Order Now"
+        onPress = {()=> navigation.navigate("Order", {title: title})}
+      />
     </SafeAreaView>
   );
 }
