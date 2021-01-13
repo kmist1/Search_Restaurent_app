@@ -32,7 +32,7 @@ const CustomRow = ({id, title, body, navigation}) => (
             <Text>
                 id: {id}
             </Text>
-            <TouchableOpacity onPress = {()=> navigation.navigate("DetailScreen", {title})}>
+            <TouchableOpacity onPress = {()=> navigation.navigate("DetailScreen", {title: title, body: body})}>
                 <Text style = {{fontWeight: 'bold', fontSize: 20}}>
                     title: {title}
                 </Text>

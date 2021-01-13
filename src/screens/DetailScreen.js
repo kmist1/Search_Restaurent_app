@@ -5,12 +5,13 @@ import { StyleSheet, Text, View, Button, SafeAreaView, Image} from 'react-native
 import ApiManager from './api/ApiManager';
 
 //Create custom components
-const DetailsScreen = ({title,navigation}) => {
-console.log(title);
+const DetailsScreen = ({route, navigation}) => {
+const {title, body} = route.params;
   return (
     <SafeAreaView style={styles.container}>
        <Text style = {styles.welcomeText}>Details</Text> 
        <Text>title: {title}</Text> 
+       <Text>body: {body}</Text>
       <StatusBar style="auto"/>
       <Button
         title = "Order Now"

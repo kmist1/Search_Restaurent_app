@@ -24,6 +24,7 @@ const Location =  props => {
                 />
                 <Button
                     title = "Login"
+                    onPress = {() => props.navigation.navigate('Order')}
                 />
           </View>
           <View style = {styles.section1}>
