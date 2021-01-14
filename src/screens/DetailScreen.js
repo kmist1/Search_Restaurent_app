@@ -6,16 +6,17 @@ import ApiManager from './api/ApiManager';
 
 //Create custom components
 const DetailsScreen = ({route, navigation}) => {
-const {title, body} = route.params;
+const {id, address, city} = route.params;
   return (
     <SafeAreaView style={styles.container}>
        <Text style = {styles.welcomeText}>Details</Text> 
-       <Text>title: {title}</Text> 
-       <Text>body: {body}</Text>
+       <Text>Restaurent ID is: {id}</Text> 
+       <Text>Location of restaurent: {address}</Text>
+       <Text>City: {city}</Text>
       <StatusBar style="auto"/>
       <Button
         title = "Order Now"
-        onPress = {()=> navigation.navigate("Order", {title: title})}
+        onPress = {()=> navigation.navigate("Order", {id: id})}
       />
     </SafeAreaView>
   );

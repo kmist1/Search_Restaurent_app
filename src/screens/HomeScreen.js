@@ -14,8 +14,8 @@ const HomeScreen = ({navigation}) => {
   const [result , setResults]  = useState([]);
 
   const getPost = async () => {
-      const response = await ApiManager.get('/posts');
-      setResults(response.data);
+      // const response = await ApiManager.get('/posts');
+      setResults(data);
   };
 
   return (
@@ -36,10 +36,9 @@ const HomeScreen = ({navigation}) => {
       <FlatList
                 data={result}
                 renderItem={({ item }) => <CustomRow
-                    userID={item.userID}
-                    id={item.id}
-                    title={item.title}
-                    body={item.body}
+                    id = {item.RestaurentID}
+                    address = {item.Address}
+                    city = {item.City}
                     navigation = {navigation}
                 />}
             />
@@ -52,6 +51,60 @@ const HomeScreen = ({navigation}) => {
 
 //Export 
 export default HomeScreen;
+
+
+const data = [
+  {
+    "RestaurentID": 1,
+    "Address": "45, Lee St",
+    "City": "New Haven"
+  },
+  {
+    "RestaurentID": 2,
+    "Address": "4, Canton St",
+    "City": "North Haven"
+  },
+  {
+    "RestaurentID": 3,
+    "Address": "20, boston post road",
+    "City": "west Haven"
+  },
+  {
+    "RestaurentID": 4,
+    "Address": "145, wnechester Ave",
+    "City": "Bridgport"
+  },
+  {
+    "RestaurentID": 5,
+    "Address": "19, Homeside Ave",
+    "City": "New York"
+  },
+  {
+    "RestaurentID": 6,
+    "Address": "20, boston post road",
+    "City": "west Haven"
+  },
+  {
+    "RestaurentID": 7,
+    "Address": "4, Canton St",
+    "City": "North Haven"
+  },
+  {
+    "RestaurentID": 8,
+    "Address": "45, Lee St",
+    "City": "New Haven"
+  },
+  {
+    "RestaurentID": 9,
+    "Address": "145, wnechester Ave",
+    "City": "Bridgport"
+  },
+  {
+    "RestaurentID": 10,
+    "Address": "19, Homeside Ave",
+    "City": "New York"
+  }
+];
 
 //Apply Styling
 const styles = StyleSheet.create({

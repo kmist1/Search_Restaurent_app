@@ -3,7 +3,7 @@ import { SafeAreaView ,View, Text, StyleSheet, Button, Image} from "react-native
 import { TextInput } from "react-native-gesture-handler";
 import RNPickerSelect from "react-native-picker-select";
 
-const OrderScreen =  ({title}) => {
+const OrderScreen =  ({id}) => {
   const [shouldShow, setShouldShow] = useState(false);
 
   // const handlePickerOnChange = (value) => {

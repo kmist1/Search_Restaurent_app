@@ -5,42 +5,30 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'column'
-    },
-    title: {
-        fontSize: 16,
-        color: '#000',
-    },
-    container_text: {
-        flex: 1,
         flexDirection: 'column',
-        marginLeft: 12,
-        justifyContent: 'center',
     },
-    description: {
-        fontSize: 11,
-        fontStyle: 'italic',
-    },
-    photo: {
-        height: 50,
-        width: 50,
-    },
+    subContainer: {
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        width: 350
+    }
+    
 });
 
-const CustomRow = ({id, title, body, navigation}) => (
+const CustomRow = ({id, address, city, navigation}) => (
     <View style={styles.container}>
-            <Text>
-                id: {id}
-            </Text>
-            <TouchableOpacity onPress = {()=> navigation.navigate("DetailScreen", {title: title, body: body})}>
+        <View style = {styles.subContainer}>
+            <TouchableOpacity onPress = {()=> navigation.navigate("DetailScreen", {id: id, address: address, city: city})}>
+                <Text style = {{fontSize: 20}}>
+                    Restaurent: {id}
+                </Text>
                 <Text style = {{fontWeight: 'bold', fontSize: 20}}>
-                    title: {title}
+                    Address : {address}
                 </Text>
                 <Text>
-                    body: {body}
+                    City : {city}
                 </Text>
-            </TouchableOpacity>
-            
+            </TouchableOpacity> 
+        </View> 
     </View>
 );
 
