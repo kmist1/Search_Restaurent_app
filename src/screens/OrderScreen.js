@@ -4,7 +4,13 @@ import { TextInput } from "react-native-gesture-handler";
 import RNPickerSelect from "react-native-picker-select";
 
 const OrderScreen =  ({title}) => {
-  const [selectedValue, setSelectedValue] = useState("java");
+  const [shouldShow, setShouldShow] = useState(false);
+
+  // const handlePickerOnChange = (value) => {
+  //   if (value === "Delivery") {
+  //     setShouldShow(!shouldShow);
+  //   }
+  // }
   
   return (
     <SafeAreaView style = {styles.container}>
@@ -18,7 +24,12 @@ const OrderScreen =  ({title}) => {
             
             <View style = {styles.pickerContainer}>
               <RNPickerSelect
-                  onValueChange={(value) => console.log(value)}
+                  onValueChange={(value) => {
+                    if (value === "Delivery") {
+                      setShouldShow(!shouldShow);
+                    }
+                    else setShouldShow(false);
+                  }}
                   placeholder={{ label: "Select order type", value: null }}
                   style = {styles.picker}
                   items={[
@@ -29,6 +40,14 @@ const OrderScreen =  ({title}) => {
                   ]}
               />
             </View>
+            {/*Here we will return the view when state is true 
+                and will return false if state is false*/}
+                {shouldShow ? (
+                  <View>
+                    <TextInput
+                        placeholder = "Address"
+                    />
+                  </View>): null}
           </View>
           <View style = {styles.section2}>
             <Image 
