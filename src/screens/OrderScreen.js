@@ -40,14 +40,6 @@ const OrderScreen =  ({title}) => {
                   ]}
               />
             </View>
-            {/*Here we will return the view when state is true 
-                and will return false if state is false*/}
-                {shouldShow ? (
-                  <View>
-                    <TextInput
-                        placeholder = "Address"
-                    />
-                  </View>): null}
           </View>
           <View style = {styles.section2}>
             <Image 
@@ -68,10 +60,42 @@ const OrderScreen =  ({title}) => {
             </View>
           </View>
 
+           {/*Here we will return the view when state is true 
+                and will return false if state is false*/}
+                {shouldShow ? (
+                  <View style = {styles.hiddenView}>
+                    <TextInput
+                        placeholder = "Street Address"
+                        style = {styles.hiddenTextInput}
+                        placeholderTextColor = 'blue'
+                    />
+                    <TextInput
+                        placeholder = "Building name / suite / Apt"
+                        style = {styles.hiddenTextInput}
+                        placeholderTextColor = 'blue'
+                      />
+                    
+                    <TextInput
+                        placeholder = "City"
+                        style = {styles.hiddenTextInput}
+                        placeholderTextColor = 'blue'
+                      />
+                    
+                    <TextInput
+                        placeholder = "ZipCode"
+                        style = {styles.hiddenTextInput}
+                        placeholderTextColor = 'blue'
+                      />
+                    <TextInput
+                        placeholder = "Delivery Instruction"
+                        style = {styles.hiddenTextInput}
+                        placeholderTextColor = 'blue'
+                      />
+                  </View>): null}
+
           <View style = {styles.submitButton}>
             <Button
               title = "Submit"
-            
             />
           </View>
 
@@ -106,10 +130,23 @@ const styles = StyleSheet.create({
   },
   submitButton: {
     alignSelf: 'center',
-    top: 600,
+    bottom: -30,
     backgroundColor: '#FF6347',
     width: '80%'
+  },
+  hiddenTextInput: {
+    width: '80%',
+    height: '13%',
+    color: 'black',
+    borderColor: 'black',
+    borderWidth: 1.5,
+  },
+  hiddenView: {
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center'
   }
+
 });
 
 export default OrderScreen;

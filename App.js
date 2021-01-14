@@ -13,6 +13,7 @@ import DetailScreen from './src/screens/DetailScreen';
 import SearchBar from './src/screens/SearchBar';
 import OrderScreen from './src/screens/OrderScreen';
 import FeedbackStackNavigator from './src/screens/feedback/StackNavigator'
+import PrivacyStackNavigator from './src/screens/privacy/StackNavigator'
 
 
 
@@ -30,6 +31,7 @@ export default function App() {
         <Drawer.Screen name="Search" component={SearchBar}/>
         <Drawer.Screen name="Order" component={OrderScreen}/>
         <Drawer.Screen name="Feedback" component={FeedbackStackNavigator}/>
+        <Drawer.Screen name="Privacy & Agreement" component={PrivacyStackNavigator}/>
 
       </Drawer.Navigator>
     </NavigationContainer>
