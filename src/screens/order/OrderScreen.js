@@ -3,14 +3,9 @@ import { SafeAreaView ,View, Text, StyleSheet, Button, Image} from "react-native
 import { TextInput } from "react-native-gesture-handler";
 import RNPickerSelect from "react-native-picker-select";
 
-const OrderScreen =  ({id}) => {
-  const [shouldShow, setShouldShow] = useState(false);
 
-  // const handlePickerOnChange = (value) => {
-  //   if (value === "Delivery") {
-  //     setShouldShow(!shouldShow);
-  //   }
-  // }
+const OrderScreen =  ({id, navigation}) => {
+  const [shouldShow, setShouldShow] = useState(false);
   
   return (
     <SafeAreaView style = {styles.container}>
@@ -39,6 +34,7 @@ const OrderScreen =  ({id}) => {
                       { label: "Delivery", value: "Delivery" },
                   ]}
               />
+              
             </View>
           </View>
           <View style = {styles.section2}>
@@ -96,6 +92,7 @@ const OrderScreen =  ({id}) => {
           <View style = {styles.submitButton}>
             <Button
               title = "Submit"
+              onPress = {() => navigation.navigate("Menu")}
             />
           </View>
 

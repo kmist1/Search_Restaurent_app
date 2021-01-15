@@ -2,7 +2,7 @@ import React from "react";
 import { SafeAreaView ,View, Text, StyleSheet, Button} from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
-const Location =  props => {
+const Login =  () => {
   
   return <SafeAreaView style = {styles.container}>
 
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Location;
+export default Login;

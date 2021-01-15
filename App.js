@@ -11,9 +11,10 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import DetailScreen from './src/screens/DetailScreen';
 import SearchBar from './src/screens/SearchBar';
-import OrderScreen from './src/screens/OrderScreen';
+import OrderScreen from './src/screens/order/OrderScreen';
 import FeedbackStackNavigator from './src/screens/feedback/StackNavigator'
 import PrivacyStackNavigator from './src/screens/privacy/StackNavigator'
+import MenuStackNavigator from './src/screens/order/StackNavigation'
 
 
 
@@ -32,6 +33,7 @@ export default function App() {
         <Drawer.Screen name="Order" component={OrderScreen}/>
         <Drawer.Screen name="Feedback" component={FeedbackStackNavigator}/>
         <Drawer.Screen name="Privacy & Agreement" component={PrivacyStackNavigator}/>
+        <Drawer.Screen name = "Menu" component={MenuStackNavigator}/>
 
       </Drawer.Navigator>
     </NavigationContainer>
