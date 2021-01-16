@@ -12,11 +12,12 @@ const styles = StyleSheet.create({
     }
 });
 
-const CartCustomRow = ({itemName, itemPrice}) => (
+const CartCustomRow = ({itemName, itemPrice, numberOfItems}) => (
     <View style={styles.container}>
         <View style = {styles.subContainer}>
             <Text>{itemName}</Text>
-            <Text>{itemPrice}</Text>
+            <Text>x   {numberOfItems}</Text>
+            <Text>=   ${itemPrice}</Text>
         </View>
     </View>
 );

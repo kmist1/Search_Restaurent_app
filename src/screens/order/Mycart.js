@@ -25,21 +25,40 @@ const Mycart =  ({route, navigation}) => {
         
         switch (key) {
           case 'b1':
-            finalData.push(["Cheesy Burger", burgerPrices[0] * value]);
+            finalData.push(["Cheesy Burger", burgerPrices[0] * value, value]);
             break;
           case 'b2':
-            finalData.push(["Classic Burger", burgerPrices[1] * value]);
+            finalData.push(["Classic Burger", burgerPrices[1] * value, value]);
             break;
           case 'b3':
-            finalData.push(["Double Bacon Burger", burgerPrices[2] * value]);
+            finalData.push(["Double Bacon Burger", burgerPrices[2] * value, value]);
             break;
           case 'b4':
-            finalData.push(["Chipotle Burger", burgerPrices[3] * value]);
+            finalData.push(["Chipotle Burger", burgerPrices[3] * value, value]);
             break;
         }
       }
       return finalData;
     }
+
+    const result = calcPrice(burgerData, burgerPrices);
+
+    const taxCalc = (result) => {
+
+      let total = 0;
+      let tax = 0
+
+      for (let i = 0; i < result.length; i++) {
+        total += result[i][1];
+      }
+      // 4 % of total tax
+      tax = (4/100) * total;
+      total += tax;
+      return [total, tax];
+      
+    };
+
+    const totalWithTex = taxCalc(result);
  
   return (
   
@@ -48,13 +67,25 @@ const Mycart =  ({route, navigation}) => {
           <Text style = {styles.text}> Thank you!</Text>
           
           <FlatList
-                data={calcPrice(burgerData, burgerPrices)}
+                data={result}
                 renderItem={({ item, index }) => <CartCustomRow
                     itemName = {item[0]}
                     itemPrice = {item[1]}
+                    numberOfItems = {item[2]}
                     
                 />}
             />
+          <View style = {styles.subSection2}>
+            <Text>Tax:    {totalWithTex[1]}</Text>
+            <Text>Total Amount:    {totalWithTex[0]}</Text>
+          </View>
+          <View style = {styles.checkOutButton}>
+            <Button
+              title = "Check Out"
+              color = 'white'
+            />
+          </View>
+            
 
                         
         </SafeAreaView>
@@ -64,6 +95,7 @@ const Mycart =  ({route, navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignContent: 'space-between'
 
   },
   text: {
@@ -71,6 +103,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center'
   },
+  subSection2: {
+    backgroundColor: 'skyblue',
+  },
+
+  checkOutButton: {
+    backgroundColor: 'black',
+    width: '100%'
+  }
   
 });
 
