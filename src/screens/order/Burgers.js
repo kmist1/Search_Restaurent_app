@@ -11,7 +11,6 @@ const RNPicker = ({bid}) => {
     <RNPickerSelect
                     onValueChange={(value) => {
                       burgerBag[bid] = value;
-                      console.log(burgerBag);
                     }}
                     style={{
                       ...pickerSelectStyles,
@@ -34,7 +33,7 @@ const RNPicker = ({bid}) => {
 }
 
 const burgerBag = new Object();
-console.log(burgerBag);
+
 
 
 const Burgers =  ({navigation}) => {
@@ -43,7 +42,7 @@ const Burgers =  ({navigation}) => {
     const [burger2, setBurger2] = useState(false);
     const [burger3, setBurger3] = useState(false);
     const [burger4, setBurger4] = useState(false);
-    console.log(burgerBag);
+  
  
   return (
   
@@ -59,7 +58,7 @@ const Burgers =  ({navigation}) => {
                 />
             { burger1 ? (
                 <View style = {styles.quantityPickerContainer}>
-                  <RNPicker bid = "01"/>
+                  <RNPicker bid = "b1"/>
               </View>
             ): null}
             
@@ -72,7 +71,7 @@ const Burgers =  ({navigation}) => {
                 />
             { burger2 ? (
                 <View style = {styles.quantityPickerContainer}>
-                  <RNPicker bid = "02"/>
+                  <RNPicker bid = "b2"/>
               </View>
             ): null}
           
@@ -86,7 +85,7 @@ const Burgers =  ({navigation}) => {
 
             { burger3 ? (
                 <View style = {styles.quantityPickerContainer}>
-                  <RNPicker bid = "03"/>
+                  <RNPicker bid = "b3"/>
               </View>
             ): null}
           </View>
@@ -99,7 +98,7 @@ const Burgers =  ({navigation}) => {
             
             { burger4 ? (
                 <View style = {styles.quantityPickerContainer}>
-                  <RNPicker bid = "04"/>
+                  <RNPicker bid = "b4"/>
               </View>
             ): null}
           </View>
@@ -107,7 +106,7 @@ const Burgers =  ({navigation}) => {
           <View>
               <Button
                 title = "Add to Cart"
-                onPress = {() => navigation.navigate("Your Cart"), {}}
+                onPress = {() => navigation.navigate("Your Cart", {burgerData : [burgerBag]})}
               />
           </View>
 
