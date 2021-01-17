@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import { SafeAreaView ,View, Text, StyleSheet, Button, FlatList} from "react-native";
-import { TextInput } from "react-native-gesture-handler";
-import { CheckBox } from 'react-native-elements';
 import CartCustomRow from './CartCustomRow';
 
 
@@ -54,7 +52,7 @@ const Mycart =  ({route, navigation}) => {
       // 4 % of total tax
       tax = (4/100) * total;
       total += tax;
-      return [total, tax];
+      return [total.toFixed(2), tax.toFixed(2)];
       
     };
 
@@ -76,8 +74,8 @@ const Mycart =  ({route, navigation}) => {
                 />}
             />
           <View style = {styles.subSection2}>
-            <Text>Tax:    {totalWithTex[1]}</Text>
-            <Text>Total Amount:    {totalWithTex[0]}</Text>
+            <Text>Tax:    ${totalWithTex[1]}</Text>
+            <Text>Total Amount:    ${totalWithTex[0]}</Text>
           </View>
           <View style = {styles.checkOutButton}>
             <Button

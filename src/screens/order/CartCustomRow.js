@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
 
 const styles = StyleSheet.create({
     container: {
@@ -9,16 +10,24 @@ const styles = StyleSheet.create({
     subContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    deleteItem: {
+        width: 30,
+        height: 30,
+        top: -5
     }
 });
 
+
 const CartCustomRow = ({itemName, itemPrice, numberOfItems}) => (
     <View style={styles.container}>
-        <View style = {styles.subContainer}>
-            <Text>{itemName}</Text>
-            <Text>x   {numberOfItems}</Text>
-            <Text>=   ${itemPrice}</Text>
-        </View>
+        
+            <View style = {styles.subContainer}>
+                <Text>{itemName}</Text>
+                <Text>x   {numberOfItems}</Text>
+                <Text>=   ${itemPrice}</Text>
+            </View>
+        
     </View>
 );
 

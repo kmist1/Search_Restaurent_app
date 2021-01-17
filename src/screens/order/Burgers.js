@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { SafeAreaView ,View, Text, StyleSheet, Button} from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { CheckBox } from 'react-native-elements';
@@ -10,7 +10,10 @@ const RNPicker = ({bid}) => {
   return (
     <RNPickerSelect
                     onValueChange={(value) => {
-                      burgerBag[bid] = value;
+                      if (value == 0) {
+                        delete burgerBag[bid];
+                      }
+                      else burgerBag[bid] = value;
                     }}
                     style={{
                       ...pickerSelectStyles,
@@ -21,18 +24,26 @@ const RNPicker = ({bid}) => {
                     }}
                     useNativeAndroidPickerStyle={false}
                     textInputProps={{ underlineColor: 'yellow' }}
-                    placeholder={{ label: "Qnt", value: null}}
+                    placeholder={{ label: "Qantity", value: null}}
                     items={[
+                        { label: "Delete", value: 0 },
                         { label: "1", value: 1 },
                         { label: "2", value: 2 },
                         { label: "3", value: 3 },
                         { label: "4", value: 4 },
+                        { label: "5", value: 4 },
+                        { label: "6", value: 4 },
+                        { label: "7", value: 4 },
+                        { label: "8", value: 4 },
+                        { label: "9", value: 4 },
                     ]}
                 />
   );
 }
 
+// store the burgers id and quantity if it selected.
 const burgerBag = new Object();
+
 
 
 
@@ -42,7 +53,7 @@ const Burgers =  ({navigation}) => {
     const [burger2, setBurger2] = useState(false);
     const [burger3, setBurger3] = useState(false);
     const [burger4, setBurger4] = useState(false);
-  
+
  
   return (
   
