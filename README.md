@@ -49,5 +49,7 @@ Project is created with:
 [![Screenshot-2021-01-18-at-12-39-53-PM.png](https://i.postimg.cc/c4xrnkww/Screenshot-2021-01-18-at-12-39-53-PM.png)](https://postimg.cc/7bRHvVBZ)
 [![Screenshot-2021-01-18-at-12-40-11-PM.png](https://i.postimg.cc/4yLZtPRQ/Screenshot-2021-01-18-at-12-40-11-PM.png)](https://postimg.cc/m1H0WQDP)
 
-## Download Application
+# Download Application
+
+Download the app from here - https://i.diawi.com/idGWoG
 
