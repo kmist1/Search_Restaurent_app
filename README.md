@@ -24,12 +24,12 @@ Project is created with:
 
 ## ScreenShotts
 
-# Welcome Screen
-# Order Screen
-# Menu Screen
-# Selecting Item Screen
-# Cart Screen
-# Checkout Screen
+* Welcome Screen
+* Order Screen
+* Menu Screen
+* Selecting Item Screen
+* Cart Screen
+* Checkout Screen
 
 ## Download Application
 
