@@ -42,7 +42,7 @@ Project is created with:
 
 
 * Cart Screen
-[![Screenshot-2021-01-18-at-12-39-14-PM.png](https://i.postimg.cc/Gtr9zqN0/Screenshot-2021-01-18-at-12-39-14-PM.png)](https://postimg.cc/VrGYkBm4)
+[![Screenshot-2021-01-18-at-12-53-13-PM.png](https://i.postimg.cc/SKJZNGgp/Screenshot-2021-01-18-at-12-53-13-PM.png)](https://postimg.cc/p9MQsKN0)
 
 
 * Checkout Screen
