@@ -4,17 +4,17 @@ import React from "react";
 import AboutUs from './src/screens/AboutUs';
 import Contact from './src/screens/Contact';
 import Location from './src/screens/Location';
-import HomeScreen from './src/screens/HomeScreen';
 import Login from './src/screens/Login';
-import DetailsScreen from "./src/screens/DetailScreen";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import DetailScreen from './src/screens/DetailScreen';
 import SearchBar from './src/screens/SearchBar';
 import OrderScreen from './src/screens/order/OrderScreen';
-import FeedbackStackNavigator from './src/screens/feedback/StackNavigator'
-import PrivacyStackNavigator from './src/screens/privacy/StackNavigator'
-import MenuStackNavigator from './src/screens/order/StackNavigation'
+import FeedbackStackNavigator from './src/screens/feedback/StackNavigator';
+import PrivacyStackNavigator from './src/screens/privacy/StackNavigator';
+import MenuStackNavigator from './src/screens/order/StackNavigation';
+import TopTabNavigation from './src/screens/TopTabNavigation';
+
 
 
 
@@ -23,8 +23,8 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="HomeScreen">
-        <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={TopTabNavigation} />
         <Drawer.Screen name="Contact" component={Contact} />
         <Drawer.Screen name="Location" component={Location} />
         <Drawer.Screen name="DetailScreen" component={DetailScreen} />
