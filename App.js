@@ -33,7 +33,7 @@ export default function App() {
         <Drawer.Screen name="Order" component={OrderScreen}/>
         <Drawer.Screen name="Feedback" component={FeedbackStackNavigator}/>
         <Drawer.Screen name="Privacy & Agreement" component={PrivacyStackNavigator}/>
-        <Drawer.Screen name = "Menu" component={MenuStackNavigator}/>
+        <Drawer.Screen name = "MENU" component={MenuStackNavigator}/>
 
       </Drawer.Navigator>
     </NavigationContainer>

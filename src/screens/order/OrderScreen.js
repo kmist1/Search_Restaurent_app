@@ -4,8 +4,11 @@ import { TextInput } from "react-native-gesture-handler";
 import RNPickerSelect from "react-native-picker-select";
 
 
-const OrderScreen =  ({id, navigation}) => {
+const OrderScreen =  ({route, navigation}) => {
   const [shouldShow, setShouldShow] = useState(false);
+  console.log(route);
+  const {id, restaurantAddress} = route.params;
+  console.log(restaurantAddress);
   
   return (
     <SafeAreaView style = {styles.container}>
@@ -34,6 +37,7 @@ const OrderScreen =  ({id, navigation}) => {
                       { label: "Delivery", value: "Delivery" },
                   ]}
               />
+              
               
             </View>
           </View>
@@ -92,10 +96,13 @@ const OrderScreen =  ({id, navigation}) => {
           <View style = {styles.submitButton}>
             <Button
               title = "Submit"
-              onPress = {() => navigation.navigate("Menu")}
+              onPress = {()=> navigation.navigate("MENU", {restaurantAddress})}
             />
           </View>
+        </View>
 
+        <View style = {{alignSelf: 'center', bottom: -35}}>
+            <Text>Selected Restaurant: {restaurantAddress}</Text>
         </View>
     </SafeAreaView>
   )

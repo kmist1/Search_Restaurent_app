@@ -16,7 +16,7 @@ const {id, address, city} = route.params;
       <StatusBar style="auto"/>
       <Button
         title = "Order Now"
-        onPress = {()=> navigation.navigate("Order", {id: id})}
+        onPress = {()=> navigation.navigate("Order", {id: id, restaurantAddress: address })}
       />
     </SafeAreaView>
   );

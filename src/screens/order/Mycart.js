@@ -8,7 +8,6 @@ import CartCustomRow from './CartCustomRow';
 
 
 const Mycart =  ({route, navigation}) => {
-    console.log(route);
     const [burgerData] = route.params.burgerData;
 
     // store burger price according to their order
@@ -23,16 +22,16 @@ const Mycart =  ({route, navigation}) => {
         
         switch (key) {
           case 'b1':
-            finalData.push(["Cheesy Burger", burgerPrices[0] * value, value]);
+            finalData.push(["Cheesy Burger", (burgerPrices[0] * value).toFixed(2), value]);
             break;
           case 'b2':
-            finalData.push(["Classic Burger", burgerPrices[1] * value, value]);
+            finalData.push(["Classic Burger", (burgerPrices[1] * value).toFixed(2), value]);
             break;
           case 'b3':
-            finalData.push(["Double Bacon Burger", burgerPrices[2] * value, value]);
+            finalData.push(["Double Bacon Burger", (burgerPrices[2] * value).toFixed(2), value]);
             break;
           case 'b4':
-            finalData.push(["Chipotle Burger", burgerPrices[3] * value, value]);
+            finalData.push(["Chipotle Burger", (burgerPrices[3] * value).toFixed(2), value]);
             break;
         }
       }
@@ -44,15 +43,15 @@ const Mycart =  ({route, navigation}) => {
     const taxCalc = (result) => {
 
       let total = 0;
-      let tax = 0
+      let tax = 0;
 
       for (let i = 0; i < result.length; i++) {
-        total += result[i][1];
+        total += parseInt(result[i][1]);
       }
       // 4 % of total tax
       tax = (4/100) * total;
       total += tax;
-      return [total.toFixed(2), tax.toFixed(2)];
+      return [total, tax.toFixed(2)];
       
     };
 
@@ -81,6 +80,7 @@ const Mycart =  ({route, navigation}) => {
             <Button
               title = "Check Out"
               color = 'white'
+              onPress = {() => navigation.navigate('Check Out',  {totalAmount: totalWithTex[0]})}
             />
           </View>
             
