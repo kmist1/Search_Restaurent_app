@@ -29,7 +29,13 @@ const OrderScreen =  ({route, navigation}) => {
                     else setShouldShow(false);
                   }}
                   placeholder={{ label: "Select order type", value: null }}
-                  style = {styles.picker}
+                  style={{
+                    ...pickerSelectStyles,
+                    iconContainer: {
+                      top: 10,
+                      right: 12,
+                    },
+                  }}
                   items={[
                       { label: "In-Store Pickup", value: "InStore" },
                       { label: "Mobile Drive Up Window", value: "Mobile" },
@@ -51,7 +57,9 @@ const OrderScreen =  ({route, navigation}) => {
               <RNPickerSelect
                   onValueChange={(value) => console.log(value)}
                   placeholder={{ label: "When would you like your order", value: null }}
-                  style = {styles.picker}
+                  style={{
+                    ...pickerSelectStyles,
+                  }}
                   items={[
                       { label: "ASAP", value: "ASAP" },
                       { label: "Later", value: "later" },
@@ -112,6 +120,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    top: 10
 
   },
   text: {
@@ -124,13 +133,6 @@ const styles = StyleSheet.create({
   section2: {
     flexDirection: 'row',
     borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  picker: {
-    fontSize: 20
-  },
-  pickerContainer: {
-    top: 20,
-    left: 20
   },
   submitButton: {
     alignSelf: 'center',
@@ -149,8 +151,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     alignItems: 'center'
-  }
-
+  },
 });
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
+  },
+  inputAndroid: {
+    fontSize: 16,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderWidth: 1.5,
+    borderColor: 'purple',
+    borderRadius: 8,
+    color: 'black',
+    paddingRight: 20, // to ensure the text is never behind the icon
+  },
+});
+
 
 export default OrderScreen;

@@ -9,12 +9,12 @@ const Tab = createMaterialTopTabNavigator();
 
 function TopTabNavigation() {
   return (
-    <NavigationContainer independent = {true}>
+    
       <Tab.Navigator style = {{top: 30}}>
         <Tab.Screen name="List" component={HomeScreen} />
         <Tab.Screen name="Location" component={Location} />
       </Tab.Navigator>
-    </NavigationContainer>
+    
   );
 }
 
