@@ -38,16 +38,16 @@ const Mycart =  ({route, navigation}) => {
         
           switch (key) {
             case 'b1':
-              finalData.push({'bid': 'b1', 'itemName': 'Cheesy Burger', 'itemPrice' : (burgerPrices[0] * value).toFixed(2), 'itemQnt': value});
+              finalData.push({'id': 'b1', 'itemName': 'Cheesy Burger', 'itemPrice' : (burgerPrices[0] * value).toFixed(2), 'itemQnt': value});
               break;
             case 'b2':
-              finalData.push({'bid': 'b2', 'itemName': 'Classic Burger', 'itemPrice' : (burgerPrices[1] * value).toFixed(2), 'itemQnt': value});
+              finalData.push({'id': 'b2', 'itemName': 'Classic Burger', 'itemPrice' : (burgerPrices[1] * value).toFixed(2), 'itemQnt': value});
               break;
             case 'b3':
-              finalData.push({'bid': 'b3', 'itemName': 'Double Bacon Burger', 'itemPrice' : (burgerPrices[2] * value).toFixed(2), 'itemQnt': value}); 
+              finalData.push({'id': 'b3', 'itemName': 'Double Bacon Burger', 'itemPrice' : (burgerPrices[2] * value).toFixed(2), 'itemQnt': value}); 
               break;
             case 'b4':
-              finalData.push({'bid': 'b4', 'itemName': 'Chipotle Burger', 'itemPrice' : (burgerPrices[3] * value).toFixed(2), 'itemQnt': value});
+              finalData.push({'id': 'b4', 'itemName': 'Chipotle Burger', 'itemPrice' : (burgerPrices[3] * value).toFixed(2), 'itemQnt': value});
               break;
           }
         }
@@ -107,6 +107,7 @@ const Mycart =  ({route, navigation}) => {
           <FlatList
                 data={result}
                 renderItem={({ item }) => <CartCustomRow
+                    itemID = {item.id}
                     itemName = {item.itemName}
                     itemPrice = {item.itemPrice}
                     numberOfItems = {item.itemQnt}

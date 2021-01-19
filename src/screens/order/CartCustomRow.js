@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
 });
 
 
-const CartCustomRow = ({itemName, itemPrice, numberOfItems}) => {
+const CartCustomRow = ({itemID, itemName, itemPrice, numberOfItems}) => {
 
-    addingToCart({itemName, itemPrice, numberOfItems});
+    addingToCart({itemID, itemName, itemPrice, numberOfItems});
 
     return (
         <View style={styles.container}>
