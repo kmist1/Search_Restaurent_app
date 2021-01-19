@@ -4,7 +4,6 @@ import {Alert} from "react-native";
 
 export default async function addingToCart(itemObj) {
     const {itemName, itemPrice, numberOfItems} = itemObj;
-    console.log(itemName, itemPrice, numberOfItems);
   try {
 
     const curUser = firebase.auth().currentUser;
