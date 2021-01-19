@@ -14,6 +14,8 @@ import FeedbackStackNavigator from './src/screens/feedback/StackNavigator';
 import PrivacyStackNavigator from './src/screens/privacy/StackNavigator';
 import MenuStackNavigator from './src/screens/order/StackNavigation';
 import TopTabNavigation from './src/screens/TopTabNavigation';
+import * as firebase from 'firebase';
+import firebaseConfig from './config/keys';
 
 
 
@@ -21,6 +23,13 @@ import TopTabNavigation from './src/screens/TopTabNavigation';
 const Drawer = createDrawerNavigator();
 
 export default function App() {
+
+  if (!firebase.apps.length) {
+    console.log('Connected with Firebase')
+    firebase.initializeApp(firebaseConfig);
+  }
+
+
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">

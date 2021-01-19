@@ -17,7 +17,7 @@ const Menu =  ({navigation}) => {
                     </ImageBackground>
 
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity = { .5 } onPress={ () => navigation.navigate('AboutMe')}>
+                    <TouchableOpacity activeOpacity = { .5 } onPress={ () => navigation.navigate('Hotdog')}>
 
                     <ImageBackground source={require('/Users/krunalmistry/Desktop/Search_Restaurent_app/assets/hotdog.jpg')} style = {styles.ImageClass}>
                         <Text style = {styles.Imagetext}>HotDogs</Text>
