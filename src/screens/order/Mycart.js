@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { SafeAreaView ,View, Text, StyleSheet, Button, FlatList} from "react-native";
 import CartCustomRow from './CartCustomRow';
+import {getData} from '/Users/krunalmistry/Desktop/Search_Restaurent_app/API/firebaseMethods.js'
 
 
 
@@ -20,9 +21,6 @@ const Mycart =  ({route, navigation}) => {
       console.log('hotdogData--------', hotdogData);
     };
 
-    
-    
-    
 
     // store burger price according to their order
     const burgerPrices = [7.99, 5.99, 8.99, 6.99 ];
@@ -79,6 +77,8 @@ const Mycart =  ({route, navigation}) => {
     }
 
     const result = calcPrice(burgerData, burgerPrices, hotdogData, hotdogPrices, finalData);
+
+    getData();
     
 
     const taxCalc = (result) => {
@@ -87,7 +87,7 @@ const Mycart =  ({route, navigation}) => {
       let tax = 0;
 
       for (let i = 0; i < result.length; i++) {
-        total += parseInt(result[i][1]);
+        total += parseInt(result[i].itemPrice);
       }
       // 4 % of total tax
       tax = (4/100) * total;
